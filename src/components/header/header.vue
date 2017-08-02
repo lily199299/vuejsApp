@@ -33,28 +33,22 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-.header{
-  color: #fff;
-  background-color: rgba(0,0,0,0.2);
-}
-  .header .content-wrapper{
-    padding:24px 12px 18px 24px;
-    font-size: 0;
-  }
-  .avatar{
-    display: inline-block;
-  }
-  .content{
-    display: inline-block;
-    margin-left: 16px;
-    font-size: 14px;
-  }
-  .title{
-    margin:2px 0 8px 0;
-  }
-.title .brand{
-  display: inline-block;
-  width:30px;
-  height: 18px;
-}
+  .header
+    color: #fff
+    background-color: rgba(0,0,0,0.2)
+    .content-wrapper
+        padding:24px 12px 18px 24px
+        font-size: 0
+        .avatar
+          display: inline-block
+        .content
+           display: inline-block
+           margin-left: 16px
+           font-size: 14px
+           .title
+             margin:2px 0 8px 0
+             .brand
+               display: inline-block
+               width:30px
+               height: 18px
 </style>
