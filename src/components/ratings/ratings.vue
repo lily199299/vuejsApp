@@ -6,9 +6,13 @@
 export default {};
 </script>
 
-<style>
+<style  lang="stylus" rel="stylesheet/stylus">
 .ratings{
   background-color: green;
   height:100px;
+  line-height: 100px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
 }
 </style>

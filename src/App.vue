@@ -1,9 +1,9 @@
 <template>
   <div id="app">
 
-      <v-header></v-header>
+    <v-header :seller="seller"></v-header>
 
-    <div class="tab">
+    <div class="tab border-1px">
       <div class="tab-item">
         <router-link to="/goods">商品</router-link>
       </div>
@@ -16,42 +16,60 @@
     </div>
 
     <router-view>
-      <v-goods></v-goods>
-      <v-ratings></v-ratings>
-      <v-seller></v-seller>
     </router-view>
-    <div class="content">content</div>
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import header from './components/header/header.vue';
-  import goods from './components/goods/goods.vue';
-  import ratings from './components/ratings/ratings.vue';
-  import seller from './components/seller/seller.vue';
+  const ERR_OK = 0;
   export default {
+    data () {
+      return {
+        seller: {}
+      };
+    },
+    created () {
+      this.$http.get('/api/seller').then((response) => {
+        /* Object, Blob, string  */
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.seller = response.data;
+          console.log(this.seller);
+        }
+      });
+    },
     components: {
-      'v-header': header,
-      'v-goods': goods,
-      'v-ratings': ratings,
-      'v-seller': seller
+      'v-header': header
     }
   };
 </script>
 
-<style>
-.tab{
-  display: flex;
-  width:100%;
-  height:40px;
-  line-height: 40px;
-  background-color: aquamarine;
-}
-  .tab-item{
-    flex:1;
+<style  lang="stylus" rel="stylesheet/stylus">
+  @import "common/stylus/mixin.styl";
+
+  .tab {
+    /*position: fixed;
+    bottom: 0;*/
+    display: flex;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+  }
+
+  .tab-item {
+    flex: 1;
     text-align: center;
   }
-.tab-item a{
-  display: block;
-}
+
+  .tab-item a {
+    display: block;
+    font-size: 14px;
+    color: rgb(77, 85, 93);
+  }
+
+  .tab-item a.active {
+    color: rgb(240, 20, 20);
+  }
 </style>
