@@ -6,7 +6,7 @@
 export default {};
 </script>
 
-<style  lang="stylus" rel="stylesheet/stylus">
+<style  lang="stylus" type="text/stylus" rel="stylesheet/stylus">
   .seller{
     background-color: red;
     height:100px;

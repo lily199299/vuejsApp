@@ -68,9 +68,8 @@
   };
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixin.styl";
-/*  @import "../../common/stylus/icon.styl";*/
   .header
     position: relative
     overflow: hidden
